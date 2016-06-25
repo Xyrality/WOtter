@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.xyrality.gradle:gradle-wonder-plugin:1.0.0'
+    }
+}
+
+version = '1.0.0'
+
+apply plugin: 'woapplication'
+
+dependencies {
+    compile project(':WOtterModel')
+
+    compile 'javax.servlet:javax.servlet-api:3.0.1'
+    compile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.22.1'
+    compile 'org.glassfish.jersey.ext:jersey-bean-validation:2.22.1'
+    compile 'org.glassfish.jersey.ext:jersey-declarative-linking:2.22.1' // ??
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.1'
+    compile 'com.sun.xml.bind:jaxb-impl:2.2.6'
+    compile ('io.dropwizard:dropwizard-auth:0.9.1') {
+        exclude module:'logback-classic'
+        exclude module:'log4j-over-slf4j'
+    }
+    compile ('com.inspire-software.lib.dto.geda:geda.core:3.1.0') { exclude module:'slf4j-api' }
+
+    compile 'io.swagger:swagger-core:1.5.9'
+    compile 'io.swagger:swagger-jersey2-jaxrs:1.5.9'
+
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.glassfish.jersey.test-framework:jersey-test-framework-core:2.22.1'
+    testCompile 'org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-external:2.22.1'
+    testCompile 'net.bytebuddy:byte-buddy:1.4.3'
+}
+
+wonder {
+    applicationClass = 'com.xyrality.wotter.Application'
+}
+
+test.dependsOn('compileTestJava')
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'

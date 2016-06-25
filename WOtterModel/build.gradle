@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.xyrality.gradle:gradle-wonder-plugin:1.0.0'
+    }
+}
+
+version = '1.0.0'
+
+apply plugin: 'woframework'
+
+dependencies {
+    compile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'

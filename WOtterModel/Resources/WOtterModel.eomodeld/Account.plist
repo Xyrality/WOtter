@@ -1,0 +1,25 @@
+{
+    attributes = (
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = name; name = name; prototypeName = varchar255; }
+    ); 
+    attributesUsedForLocking = (id, name); 
+    className = "com.xyrality.wotter.eo.Account"; 
+    classProperties = (name, posts); 
+    externalName = Account; 
+    fetchSpecificationDictionary = {}; 
+    name = Account; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Post; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = accountID; sourceAttribute = id; }); 
+            name = posts; 
+        }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {parentClassName = "er.extensions.eof.ERXGenericRecord"; }; 
+    }; 
+}

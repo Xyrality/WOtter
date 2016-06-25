@@ -1,0 +1,4 @@
+include 'WOtter'
+include 'WOtterModel'
+
+rootProject.name = 'WOtter'

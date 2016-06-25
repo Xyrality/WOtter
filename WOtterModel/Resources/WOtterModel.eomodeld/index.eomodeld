@@ -1,0 +1,31 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:postgresql://localhost/wotter"; 
+        driver = "org.postgresql.Driver"; 
+        password = a; 
+        username = dbliefernicht; 
+    }; 
+    entities = (
+        {className = "com.xyrality.wotter.eo.Account"; name = Account; }, 
+        {className = "com.xyrality.wotter.eo.Post"; name = Post; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:postgresql://localhost/wotter"; 
+                        driver = "org.postgresql.Driver"; 
+                        password = postgres; 
+                        username = postgres; 
+                    }; 
+                    prototypeEntityName = EOJDBCPostgresqlPrototypes; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

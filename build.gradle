@@ -1,0 +1,6 @@
+allprojects {
+    project.ext {
+        wonderVersion = '6.1.2'
+        webObjectsVersion = '5.4.3'
+    }
+}
